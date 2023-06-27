@@ -1,0 +1,81 @@
+@use './vars';
+
+.whyus{
+    padding: 80px 60px 90px;
+
+    .title{
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+
+    .main{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-evenly;
+        column-gap: 40px;
+
+        .main_img{
+            width: 400px;
+            height: 550px;
+            object-fit: cover;
+            border-radius: 10px;
+            filter: brightness(75%);
+        }
+
+        .contents{
+            margin-left: 5px;
+            
+            .descr{
+                width: 500px;
+                font-size: 1.25rem;
+                font-weight: 500;
+                line-height: 1.5em;
+                margin-bottom: 25px;
+                color: vars.$platinum;
+                text-align: justify;
+            }
+
+            .qualities{
+                display: flex;
+                flex-direction: column;
+                row-gap: 12.5px;
+                margin-bottom: 50px;
+
+                .quality{
+                    display: flex;
+                    align-items: center;
+                    column-gap: 10px;
+                    font-size: 1.25rem;
+                    font-weight: 500;
+                    color: vars.$ghost-white;
+                    text-transform: capitalize;
+
+                    img{
+                        width: auto;
+                        height: 1.2rem;
+                    }
+                }
+            }
+
+            button{
+                display: block;
+                width: fit-content;
+                padding: 10px 50px;
+                font-size: 1.3rem;
+                font-weight: 500;
+                background-color: vars.$platinum;
+                color: vars.$rich-black;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: 250ms ease-in-out;
+
+                &:hover{
+                    background-color: vars.$hover-pink;
+                    color: vars.$ghost-white;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,75 @@
+@use './vars';
+
+.about{
+    width: 100%;
+    height: fit-content;
+    padding: 70px 50px 120px;
+
+    .title{
+        font-size: 2rem;
+        font-weight: 700;
+        text-align: center;
+        color: vars.$platinum;
+        margin-bottom: 40px;
+    }
+
+    .main{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        width: 100%;
+        height: fit-content;
+
+        .imgs{
+            display: flex;
+            width: calc(300px + 300px - 75px);
+
+            img{
+                width: 300px;
+                height: 500px;
+                object-fit: cover;
+                border-radius: 10px;
+                
+                &.img2{
+                    filter: brightness(80%);
+                    transform: translateX(-75px) translateY(37.5px);
+                }
+            }
+        }
+
+        .content{
+            margin-top: 37.5px;
+            width: 650px;
+            .descr{
+                margin-bottom: 2.5em;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                row-gap: 2em;
+                font-size: 1.15rem;
+                line-height: 1.5em;
+                text-align: justify;
+            }
+
+            button{
+                display: block;
+                margin: 0 0 0 auto;
+                font-size: 1.25rem;
+                font-weight: 600;
+                width: fit-content;
+                height: fit-content;
+                color: vars.$dark-gunmetal;
+                padding: 10px 40px;
+                border-radius: 7.5px;
+                cursor: pointer;
+                transition: all 200ms ease-in-out;
+
+                &:hover{
+                    background-color: vars.$hover-pink;
+                    color: vars.$ghost-white;
+                    border-radius: 40px;
+                }
+            }
+        }
+    }
+}

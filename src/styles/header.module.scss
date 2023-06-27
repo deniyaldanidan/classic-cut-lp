@@ -1,0 +1,54 @@
+@use './vars';
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: fit-content;
+    z-index: 1;
+
+    img {
+        width: auto;
+        height: 2.4rem;
+    }
+
+    .menus {
+        display: flex;
+        align-items: center;
+        column-gap: 30px;
+
+        .menu{
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: vars.$platinum;
+            cursor: pointer;
+            transition: 250ms ease-in-out;
+
+            &:hover{
+                color: vars.$hover-pink;
+            }
+        }
+
+        button{
+            display: block;
+            font-size: 1.15rem;
+            font-weight: 600;
+            padding: 7.5px 30px;
+            background-color: vars.$platinum;
+            color: vars.$dark-gunmetal;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 250ms ease-in-out;
+
+            &:hover{
+                color: vars.$ghost-white;
+                background-color: vars.$hover-pink;
+            }
+        }
+    }
+}

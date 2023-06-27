@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Classic Haircut",
+        "description": "Timeless styles for confident appearances.",
+        "price": 200
+    },
+    {
+        "id": 2,
+        "name": "Beard Trim",
+        "description": "Expert grooming for a well-groomed beard.",
+        "price": 100
+    },
+    {
+        "id": 3,
+        "name": "Mustache Trim",
+        "description": "Precise shaping for a polished mustache.",
+        "price": 50
+    },
+    {
+        "id": 4,
+        "name": "Hot Towel Shave",
+        "description": "Luxurious, rejuvenating shaving experience.",
+        "price": 100
+    },
+    {
+        "id": 5,
+        "name": "Skin Care & Facials",
+        "description": "Refreshed, revitalized skin treatments.",
+        "price": "Call for details"
+    },
+    {
+        "id": 6,
+        "name": "Head & Scalp Massage",
+        "description": "Relaxing relief for stress and tension.",
+        "price": 250
+    }
+]

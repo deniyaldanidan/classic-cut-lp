@@ -1,0 +1,26 @@
+@use './vars';
+
+*{
+  font-family: 'Lora', serif;
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: vars.$rich-black;
+  color: vars.$ghost-white;
+
+  // overflow-x: hidden;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar{
+    display: none;
+  }
+}
