@@ -51,13 +51,14 @@
                 text-align: justify;
             }
 
-            button{
+            .cta_btn{
                 display: block;
                 margin: 0 0 0 auto;
                 font-size: 1.25rem;
                 font-weight: 600;
                 width: fit-content;
                 height: fit-content;
+                background-color: vars.$ghost-white;
                 color: vars.$dark-gunmetal;
                 padding: 10px 40px;
                 border-radius: 7.5px;

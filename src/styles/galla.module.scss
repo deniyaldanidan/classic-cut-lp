@@ -1,0 +1,56 @@
+@use './vars';
+
+
+.galla{
+    margin: 70px 0;
+    padding: 20px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 80px 80px 80px 80px 80px 80px 80px 80px;
+    gap: 30px;
+    grid-auto-columns: 1fr;
+    justify-content: space-between;
+    align-items: center;
+    grid-template-areas: ". . . . . . Area-2 Area-2 . . . ."
+    ". . Area Area Area Area Area-2 Area-2 Area-3 Area-3 . ."
+    "Area-6 Area-6 Area Area Area Area Area-8 Area-8 Area-3 Area-3 Area-7 Area-7"
+    "Area-6 Area-6 Area Area Area Area Area-8 Area-8 Area-3 Area-3 Area-7 Area-7"
+    "Area-6 Area-6 Area Area Area Area Area-8 Area-8 Area-3 Area-3 . ."
+    "Area-6 Area-6 Area-5 Area-5 Area-9 Area-9 Area-8 Area-8 . . . ."
+    ". . Area-5 Area-5 Area-9 Area-9 . . . . . ."
+    ". . . . Area-9 Area-9 . . . . . .";
+
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(75%);
+    }
+
+    .img{
+        grid-area: Area;
+    }
+
+    .img2{
+        grid-area: Area-2;
+    }
+
+    .img7{
+        grid-area: Area-7;
+    }
+    .img8{
+        grid-area: Area-8;
+    }
+    .img9{
+        grid-area: Area-9;
+    }
+    .img5{
+        grid-area: Area-5;
+    }
+    .img6{
+        grid-area: Area-6;
+    }
+    .img3{
+        grid-area: Area-3;
+    }
+}

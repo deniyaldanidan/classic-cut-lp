@@ -8,14 +8,15 @@
   padding: 0;
   text-decoration: none;
   box-sizing: border-box;
+  color: inherit;
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
   background-color: vars.$rich-black;
   color: vars.$ghost-white;
-
-  // overflow-x: hidden;
+  scroll-behavior: smooth;
 
   scrollbar-width: none;
   -ms-overflow-style: none;

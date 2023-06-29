@@ -10,7 +10,7 @@ This single page app advertising a barber shop.
 - [x] About
 - [x] Services
 - [x] Why Choose us
-- [ ] Booking Form
-- [ ] Gallery
+- [x] Booking Form
+- [x] Gallery
 - [ ] Testimonials
-- [ ] Footer with Socials, Working Hrs, Address & Footer-Logo
+- [x] Footer with Socials, Working Hrs, Address & Footer-Logo

@@ -1,0 +1,81 @@
+@use './vars';
+
+
+.bform{
+    background-color: vars.$mild-gunmetal;
+    padding: 90px 50px 100px;
+
+
+    .title{
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 50px;
+        text-align: center;
+        text-transform: capitalize;
+    }
+
+    .main{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        max-width: 750px;
+        margin: 0 auto;
+        row-gap: 30px;
+
+        .inp_grp{
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+
+            label{
+                font-size: 1.25rem;
+                font-weight: 500;
+                text-transform: capitalize;
+            }
+
+            input{
+                display: block;
+                width: 100%;
+                padding: 10px 15px;
+                background: none;
+                border: none;
+                outline: none;
+
+                background-color: vars.$dark-gunmetal;
+                border-radius: 5px;
+                font-size: 1.2rem;
+                color: vars.$ghost-white;
+                border-bottom: 1px solid vars.$cadet-gray;
+                transition: 250ms ease-in-out;
+
+                &:focus{
+                    border-color: vars.$french-gray;
+                }
+            }
+
+
+        }
+
+        button{
+            padding: 10px 50px;
+            min-width: fit-content;
+            width: 50%;
+            max-width: 250px;
+            display: block;
+            font-size: 1.3rem;
+            font-weight: 600;
+            border-radius: 10px;
+            margin: 30px auto 0;
+            cursor: pointer;
+            background-color: vars.$platinum;
+            color: vars.$dark-gunmetal;
+
+            transition: 250ms ease-in-out;
+
+            &:hover{
+                background-color: vars.$hover-pink;
+                color: vars.$ghost-white;
+            }
+        }
+    }
+}
