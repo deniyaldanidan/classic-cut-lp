@@ -4,13 +4,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    column-gap: 25px;
     padding: 20px 50px;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: fit-content;
-    z-index: 1;
+    z-index: 10;
+
+    backdrop-filter: blur(6px) saturate(200%);
+    -webkit-backdrop-filter: blur(6px) saturate(200%);
+    background-color: rgba(5, 15, 21, 0.4);
 
     img {
         width: auto;
@@ -22,32 +27,157 @@
         align-items: center;
         column-gap: 30px;
 
-        .menu{
+        .menu {
             font-size: 1.15rem;
             font-weight: 500;
             color: vars.$platinum;
             cursor: pointer;
             transition: 250ms ease-in-out;
 
-            &:hover{
+            &:hover {
                 color: vars.$hover-pink;
             }
         }
 
-        .cta_btn{
+        .cta_btn {
             display: block;
             font-size: 1.15rem;
             font-weight: 600;
-            padding: 7.5px 30px;
+            padding: 7.5px 25px;
             background-color: vars.$platinum;
             color: vars.$dark-gunmetal;
             border-radius: 20px;
             cursor: pointer;
             transition: 250ms ease-in-out;
 
-            &:hover{
+            &:hover {
                 color: vars.$ghost-white;
                 background-color: vars.$hover-pink;
+            }
+        }
+
+        .mobile_header {
+            position: relative;
+
+            .mbl_hdr_label {
+                font-size: 1.05rem;
+                font-weight: 500;
+                color: vars.$platinum;
+                cursor: pointer;
+            }
+
+            .mbl_hdr_drp {
+                position: absolute;
+                top: calc(100% + 5px);
+                left: 50%;
+                display: flex;
+                flex-direction: column;
+                width: fit-content;
+                min-width: 10ch;
+                font-size: 1rem;
+                background-color: rgba($color: vars.$hover-pink, $alpha: 0.85);
+                padding: 0 5px;
+                
+                a{
+                    padding: 7.5px 1px;
+                    width: 100%;
+                    text-align: center;
+                    border-bottom: vars.$platinum 1.5px solid;
+
+                    &:last-of-type{
+                        border-bottom: none;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1100px) {
+        padding: 20px 30px;
+
+
+        img {
+            height: 2rem;
+        }
+
+        .menus {
+            column-gap: 20px;
+
+            .menu {
+                font-size: 1.05rem;
+            }
+
+            .cta_btn {
+                font-size: 1.05rem;
+                padding: 7.5px 20px;
+            }
+        }
+    }
+
+    @media (max-width:800px) {
+        .menus {
+            column-gap: 30px;
+        }
+    }
+
+    @media (max-width: 575px){
+        padding: 15px 20px;
+        column-gap: 15px;
+
+        img{
+            height: 1.5rem;
+        }
+
+        .menus{
+            column-gap: 15px;
+
+            .menu, .mobile_header>.mbl_hdr_label{
+                font-size: 1rem;
+            }
+
+            .cta_btn{
+                background: none;
+                color: vars.$ghost-white;
+                padding: 0;
+                text-decoration: underline;
+                font-size: 1rem;
+
+                &:hover, &:active{
+                    background: none;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 380px){
+        padding: 15px;
+
+        img{
+            height: 1.2rem;
+        }
+    }
+
+    @media (max-width: 320px){
+        padding: 12.5px 10px;
+        column-gap: 10px;
+
+        img{
+            height: 1.15rem;
+        }
+
+        .menus{
+            .mobile_header{
+                .mbl_hdr_label{
+                    font-size: 0.95rem;
+                }
+
+                .mbl_hdr_drp{
+                    font-size: 0.95rem;
+                }
+            }
+
+            .cta_btn{
+                font-size: 0.95rem;
             }
         }
     }

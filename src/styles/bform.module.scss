@@ -1,10 +1,8 @@
 @use './vars';
 
-
 .bform{
     background-color: vars.$mild-gunmetal;
     padding: 90px 50px 100px;
-
 
     .title{
         font-size: 2rem;
@@ -33,8 +31,9 @@
                 text-transform: capitalize;
             }
 
-            input{
+            textarea, input, .cust_select>.cst_sel_display{
                 display: block;
+                min-width: 245px;
                 width: 100%;
                 padding: 10px 15px;
                 background: none;
@@ -43,17 +42,126 @@
 
                 background-color: vars.$dark-gunmetal;
                 border-radius: 5px;
-                font-size: 1.2rem;
+                font-size: 1.15rem;
                 color: vars.$ghost-white;
                 border-bottom: 1px solid vars.$cadet-gray;
                 transition: 250ms ease-in-out;
+
+                &::placeholder{
+                    color: vars.$cadet-gray;
+                }
 
                 &:focus{
                     border-color: vars.$french-gray;
                 }
             }
 
+            input[type=tel]{
+                &::before{
+                    display: inline;
+                    content: "+91";
+                    color: inherit;
+                }
+            }
 
+            textarea{
+                height: 225px;
+                resize: none;
+
+                scrollbar-width: none;
+
+                &::-webkit-scrollbar{
+                    width: 0;
+                }
+            }
+
+            .cust_select{
+                position: relative;
+
+                .cst_sel_display{
+                    height: fit-content;
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 15px;
+                    color: vars.$cadet-gray;
+                    cursor: pointer;
+                    padding: 12.5px 15px;
+
+                    .cust_sel_val{
+                        width: fit-content;
+                        height: fit-content;
+                        color: vars.$rich-black;
+                        background-color: vars.$french-gray;
+                        padding: 3px 10px;
+                        border-radius: 30px;
+                        font-size: 1rem;
+                        font-weight: 500;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        column-gap: 6px;
+
+                        span{
+                            cursor: text;
+                        }
+
+                        svg{
+                            font-size: 1.15rem;
+
+                            &:hover{
+                                color: vars.$hover-pink;
+                            }
+                        }
+                    }
+                }
+
+                .cst_sel_drp{
+                    position: absolute;
+                    top: calc(100% + 5px);
+                    left: 50%;
+                    z-index: 2;
+                    width: 97.5%;
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 2.5px;
+                    background-color: rgba($color: vars.$rich-black, $alpha: 0.9);
+                    border-radius: 5px;
+                    max-height: 180px;
+                    overflow-y: auto;
+                    scrollbar-width: thin;
+
+                    &::-webkit-scrollbar{
+                        width: 5px;
+                    }
+
+                    &::-webkit-scrollbar-track{
+                        background: vars.$rich-black;
+                    }
+
+                    &::-webkit-scrollbar-thumb{
+                        background-color: vars.$hover-pink;
+                    }
+
+                    span{
+                        margin:  0 7.5px;
+                        padding: 12.5px 2.5px;
+                        font-size: 1.05rem;
+                        cursor: pointer;
+                        color: vars.$french-gray;
+                        border-bottom: vars.$cadet-gray solid 1.5px;
+                        transition: 100ms ease-in-out;
+
+                        &:hover{
+                            color: vars.$ghost-white;
+                            text-decoration: underline;
+                        }
+
+                        &:last-of-type{
+                            border-bottom: none;
+                        }
+                    }
+                }
+            }
         }
 
         button{
