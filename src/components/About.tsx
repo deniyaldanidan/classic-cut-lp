@@ -1,30 +1,63 @@
 import styles from '../styles/about.module.scss';
 import about2 from '../assets/about1.jpg';
 import about1 from '../assets/about2.jpg';
-import {motion, Variants} from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
+import { useMediaQuery } from 'react-responsive';
 
 
-const descrParVar:Variants = {
+const descrParVar: Variants = {
     hidden: {},
-    visible: {transition: {staggerChildren: 0.5}}
+    visible: { transition: { staggerChildren: 0.5 } }
 }
 
-const descrChildVar:Variants = {
-    hidden: {opacity: 0, y:-10},
-    visible: {opacity: 1, y:0, transition: {duration:1}}
+const descrChildVar: Variants = {
+    hidden: { opacity: 0, y: -10 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1 } }
+}
+
+const img1DeskVar: Variants = {
+    initial: { x: -20 },
+    inView: { x: 0, transition: { duration: 1.5 } }
+}
+
+const img2DeskVar: Variants = {
+    initial: { x: -105, y: 37.5 },
+    inView: { x: -125, y: 37.5, transition: { duration: 1.5 } }
+}
+
+const imgMobVar: Variants = {
+    initial: {x: -30, opacity:0},
+    inView: {x: 0, opacity:1, transition: {duration: 1.5}}
 }
 
 export default function About() {
+
+    const isMobile = useMediaQuery({ query: "(max-width: 485px)" });
+
     return (
         <div className={styles.about} id='about-section'>
-            <motion.div className={styles.title} initial={{opacity: 0, y:-20}} whileInView={{opacity:1, y:0, transition: {duration: 1}}} viewport={{once:true}} >Our Story</motion.div>
+            <motion.div className={styles.title} initial={{ opacity: 0, y: -20 }} whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }} viewport={{ once: true }} >Our Story</motion.div>
             <div className={styles.main}>
                 <div className={styles.imgs}>
-                    <motion.img src={about1} alt="The Classic Cut - About Us" className={styles.img1} initial={{x:-40}} whileInView={{x:0, transition: {duration:1.5}}} />
-                    <motion.img src={about2} alt="The Classic Cut - About Us" className={styles.img2} initial={{x:-35, y:37.5}} whileInView={{x:-75, y: 37.5, transition: {duration:1.5}}} />
+                    <motion.img src={about1}
+                        alt="The Classic Cut - About Us"
+                        className={styles.img1}
+                        variants={isMobile ? imgMobVar : img1DeskVar}
+                        initial="initial"
+                        whileInView="inView"
+                        viewport={{once: isMobile}}
+                    />
+                    <motion.img src={about2}
+                        alt="The Classic Cut - About Us"
+                        className={styles.img2}
+                        variants={isMobile ? imgMobVar : img2DeskVar}
+                        initial="initial"
+                        whileInView="inView"
+                        viewport={{once: isMobile}}
+                    />
                 </div>
                 <div className={styles.content}>
-                    <motion.div className={styles.descr} variants={descrParVar} initial="hidden" whileInView="visible" viewport={{amount:0.25, once: true}}>
+                    <motion.div className={styles.descr} variants={descrParVar} initial="hidden" whileInView="visible" viewport={{ amount: 0.1, once: true }}>
                         <motion.span variants={descrChildVar} >
                             Established in 2002, The Classic Cut is Chennai's premier destination for impeccable grooming. With over 20 years of expertise, our talented barbers master timeless styles that exude confidence and embrace classic elegance. Nestled in the heart of Chennai, our welcoming shop offers a sanctuary for gentlemen seeking the ultimate self-care experience.
                         </motion.span>

@@ -1,5 +1,6 @@
 import About from "./components/About";
 import BForm from "./components/BForm";
+import Copyright from "./components/Copyright";
 import Footer from "./components/Footer";
 import Galla from "./components/Galla";
 import Header from "./components/Header";
@@ -18,6 +19,7 @@ function App() {
       <BForm />
       <Galla />
       <Footer />
+      <Copyright />
     </>
   );
 }

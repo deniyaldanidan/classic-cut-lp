@@ -1,11 +1,11 @@
 @use './vars';
 
-.about{
+.about {
     width: 100%;
     height: fit-content;
     padding: 70px 50px 120px;
 
-    .title{
+    .title {
         font-size: 2rem;
         font-weight: 700;
         text-align: center;
@@ -13,36 +13,41 @@
         margin-bottom: 40px;
     }
 
-    .main{
+    .main {
         display: flex;
         justify-content: space-evenly;
-        align-items: flex-start;
+        column-gap: 40px;
         width: 100%;
         height: fit-content;
 
-        .imgs{
+        .imgs {
             display: flex;
-            width: calc(300px + 300px - 75px);
+            width: calc(290px + 290px - 125px);
 
-            img{
-                width: 300px;
-                height: 500px;
+            img {
+                position: relative;
+                width: 290px;
+                height: auto;
+                aspect-ratio: 3 / 5;
+                max-height: 500px;
                 object-fit: cover;
                 border-radius: 10px;
-                
-                &.img2{
+                z-index: 2;
+
+                &.img2 {
                     filter: brightness(80%);
-                    transform: translateX(-75px) translateY(37.5px);
+                    z-index: 1;
                 }
             }
         }
 
-        .content{
+        .content {
             margin-top: 37.5px;
-            width: 650px;
-            .descr{
+
+            .descr {
                 margin-bottom: 2.5em;
                 width: 100%;
+                max-width: 650px;
                 display: flex;
                 flex-direction: column;
                 row-gap: 2em;
@@ -51,7 +56,7 @@
                 text-align: justify;
             }
 
-            .cta_btn{
+            .cta_btn {
                 display: block;
                 margin: 0 0 0 auto;
                 font-size: 1.25rem;
@@ -65,7 +70,7 @@
                 cursor: pointer;
                 transition: all 200ms ease-in-out;
 
-                &:hover{
+                &:hover {
                     background-color: vars.$hover-pink;
                     color: vars.$ghost-white;
                     border-radius: 40px;
@@ -73,4 +78,170 @@
             }
         }
     }
+
+    @media (max-width: 1100px) {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    @media (max-width: 1010px){
+        .main{
+
+            .imgs{
+                width: calc( 275px + 275px - 125px);
+
+                img{
+                    width: 275px;
+                }
+            }
+
+            .content{
+                .descr{
+                    font-size: 1.1rem;
+                }
+
+                .cta_btn{
+                    font-size: 1.15rem;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 985px){
+
+        .main{
+            flex-direction: column;
+            align-items: center;
+            row-gap: 50px;
+
+            .imgs{
+                width: calc(300px + 300px - 125px);
+                margin: 0 auto;
+
+                img{
+                    width: 300px;
+                }
+            }
+
+            .content{
+                margin-top: 45px;
+
+                .descr{
+                    max-width: 700px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 890px){
+        .title{
+            font-size: 1.75rem;
+        }
+    }
+
+    @media (max-width:820px){
+        .main{
+            .imgs{
+                width: calc(270px + 270px - 125px);
+
+                img{
+                    width: 270px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 700px){
+
+        .main{
+
+            .imgs{
+                width: calc(250px + 250px - 125px);
+
+                img{
+                    width: 250px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 575px){
+        padding-left: 20px;
+        padding-right: 20px;
+
+        .title{
+            font-size: 1.5rem;
+        }
+
+        .main{
+            .content{
+                .descr{
+                    font-size: 1.05rem;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 485px){
+
+        .main{
+            row-gap: 50px;
+
+            .imgs{
+                flex-direction: column;
+                width: 100%;
+                align-items: center;
+                row-gap: 40px;
+
+                img{
+                    width: 100%;
+                    max-width: 450px;
+                    max-height: 400px;
+                    aspect-ratio: 1 / 1;
+                }
+            }
+
+            .content{
+                margin-top: 0;
+                .descr{
+                    font-size: 1rem;
+                }
+
+                .cta_btn{
+                    font-size: 1.1rem;
+                    padding: 7.5px 30px;
+                }
+            }
+        }
+    }
+
+
+    @media (max-width: 380px){
+        padding-left: 15px;
+        padding-right: 15px;
+
+        .title{
+            font-size: 1.35rem;
+        }
+    }
+
+    @media (max-width: 320px){
+        padding-left: 10px;
+        padding-right: 10px;
+
+        .main{
+            .content{
+                .cta_btn{
+                    width: 85%;
+                    min-width: fit-content;
+                    text-align: center;
+                    padding: 8px 40px;
+                    font-weight: 700;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
 }
+
+// read the code & test the responsiveness

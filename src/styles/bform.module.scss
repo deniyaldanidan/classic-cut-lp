@@ -2,7 +2,7 @@
 
 .bform{
     background-color: vars.$mild-gunmetal;
-    padding: 90px 50px 100px;
+    padding: 90px 30px 100px;
 
     .title{
         font-size: 2rem;
@@ -15,154 +15,10 @@
     .main{
         display: flex;
         flex-direction: column;
-        width: 80%;
+        width: 100%;
         max-width: 750px;
         margin: 0 auto;
         row-gap: 30px;
-
-        .inp_grp{
-            display: flex;
-            flex-direction: column;
-            row-gap: 10px;
-
-            label{
-                font-size: 1.25rem;
-                font-weight: 500;
-                text-transform: capitalize;
-            }
-
-            textarea, input, .cust_select>.cst_sel_display{
-                display: block;
-                min-width: 245px;
-                width: 100%;
-                padding: 10px 15px;
-                background: none;
-                border: none;
-                outline: none;
-
-                background-color: vars.$dark-gunmetal;
-                border-radius: 5px;
-                font-size: 1.15rem;
-                color: vars.$ghost-white;
-                border-bottom: 1px solid vars.$cadet-gray;
-                transition: 250ms ease-in-out;
-
-                &::placeholder{
-                    color: vars.$cadet-gray;
-                }
-
-                &:focus{
-                    border-color: vars.$french-gray;
-                }
-            }
-
-            input[type=tel]{
-                &::before{
-                    display: inline;
-                    content: "+91";
-                    color: inherit;
-                }
-            }
-
-            textarea{
-                height: 225px;
-                resize: none;
-
-                scrollbar-width: none;
-
-                &::-webkit-scrollbar{
-                    width: 0;
-                }
-            }
-
-            .cust_select{
-                position: relative;
-
-                .cst_sel_display{
-                    height: fit-content;
-                    display: flex;
-                    flex-wrap: wrap;
-                    gap: 15px;
-                    color: vars.$cadet-gray;
-                    cursor: pointer;
-                    padding: 12.5px 15px;
-
-                    .cust_sel_val{
-                        width: fit-content;
-                        height: fit-content;
-                        color: vars.$rich-black;
-                        background-color: vars.$french-gray;
-                        padding: 3px 10px;
-                        border-radius: 30px;
-                        font-size: 1rem;
-                        font-weight: 500;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        column-gap: 6px;
-
-                        span{
-                            cursor: text;
-                        }
-
-                        svg{
-                            font-size: 1.15rem;
-
-                            &:hover{
-                                color: vars.$hover-pink;
-                            }
-                        }
-                    }
-                }
-
-                .cst_sel_drp{
-                    position: absolute;
-                    top: calc(100% + 5px);
-                    left: 50%;
-                    z-index: 2;
-                    width: 97.5%;
-                    display: flex;
-                    flex-direction: column;
-                    row-gap: 2.5px;
-                    background-color: rgba($color: vars.$rich-black, $alpha: 0.9);
-                    border-radius: 5px;
-                    max-height: 180px;
-                    overflow-y: auto;
-                    scrollbar-width: thin;
-
-                    &::-webkit-scrollbar{
-                        width: 5px;
-                    }
-
-                    &::-webkit-scrollbar-track{
-                        background: vars.$rich-black;
-                    }
-
-                    &::-webkit-scrollbar-thumb{
-                        background-color: vars.$hover-pink;
-                    }
-
-                    span{
-                        margin:  0 7.5px;
-                        padding: 12.5px 2.5px;
-                        font-size: 1.05rem;
-                        cursor: pointer;
-                        color: vars.$french-gray;
-                        border-bottom: vars.$cadet-gray solid 1.5px;
-                        transition: 100ms ease-in-out;
-
-                        &:hover{
-                            color: vars.$ghost-white;
-                            text-decoration: underline;
-                        }
-
-                        &:last-of-type{
-                            border-bottom: none;
-                        }
-                    }
-                }
-            }
-        }
 
         button{
             padding: 10px 50px;
@@ -183,6 +39,256 @@
             &:hover{
                 background-color: vars.$hover-pink;
                 color: vars.$ghost-white;
+            }
+        }
+    }
+
+    @media (max-width: 890px){
+        .title{
+            font-size: 1.75rem;
+        }
+    }
+
+    @media (max-width: 575px){
+        padding-left: 20px;
+        padding-right: 20px;
+
+        .title{
+            font-size: 1.5rem;
+        }
+
+        .main{
+            button{
+                font-size: 1.25rem;
+                max-width: 225px;
+            }
+        }
+    }
+
+    @media (max-width: 380px){
+        padding-left: 15px;
+        padding-right: 15px;
+
+        .title{
+            font-size: 1.35rem;
+            font-weight: 600;
+        }
+
+        .main{
+            button{
+                font-size: 1.15rem;
+                width: 80%;
+                max-width: 300px;
+            }
+        }
+
+    }
+
+    @media (max-width: 320px){
+        padding-left: 10px;
+        padding-right: 10px;
+
+        .main{
+            button{
+                width: 90%;
+            }
+        }
+    }
+}
+
+.inp_grp{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+
+    label{
+        display: inline;
+        font-size: 1.25rem;
+        font-weight: 500;
+        text-transform: capitalize;
+        width: fit-content;
+    }
+
+    textarea, input, .cust_select>.cst_sel_display{
+        display: block;
+        min-width: 230px;
+        width: 100%;
+        padding: 10px 15px;
+        background: none;
+        border: none;
+        outline: none;
+
+        background-color: vars.$dark-gunmetal;
+        border-radius: 5px;
+        font-size: 1.15rem;
+        color: vars.$ghost-white;
+        border-bottom: 1px solid vars.$cadet-gray;
+        transition: 250ms ease-in-out;
+
+        &::placeholder{
+            color: vars.$cadet-gray;
+        }
+
+        &:focus{
+            border-color: vars.$french-gray;
+        }
+    }
+
+    textarea{
+        height: 225px;
+        resize: none;
+
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar{
+            width: 0;
+        }
+    }
+
+    .cust_select{
+        position: relative;
+
+        .cst_sel_display{
+            height: fit-content;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            color: vars.$cadet-gray;
+            cursor: pointer;
+            padding: 12.5px 15px;
+
+            .cust_sel_val{
+                width: fit-content;
+                height: fit-content;
+                color: vars.$rich-black;
+                background-color: vars.$french-gray;
+                padding: 3px 10px;
+                border-radius: 30px;
+                font-size: 1rem;
+                font-weight: 500;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                column-gap: 6px;
+
+                span{
+                    cursor: text;
+                }
+
+                svg{
+                    font-size: 1.15rem;
+
+                    &:hover{
+                        color: vars.$hover-pink;
+                    }
+                }
+            }
+        }
+
+        .cst_sel_drp{
+            position: absolute;
+            top: calc(100% + 5px);
+            left: 50%;
+            z-index: 2;
+            width: 97.5%;
+            display: flex;
+            flex-direction: column;
+            row-gap: 2.5px;
+            background-color: rgba($color: vars.$rich-black, $alpha: 0.9);
+            border-radius: 5px;
+            max-height: 180px;
+            overflow-y: auto;
+            scrollbar-width: thin;
+
+            &::-webkit-scrollbar{
+                width: 5px;
+            }
+
+            &::-webkit-scrollbar-track{
+                background: vars.$rich-black;
+            }
+
+            &::-webkit-scrollbar-thumb{
+                background-color: vars.$hover-pink;
+            }
+
+            span{
+                margin:  0 7.5px;
+                padding: 12.5px 2.5px;
+                font-size: 1.05rem;
+                cursor: pointer;
+                color: vars.$french-gray;
+                border-bottom: vars.$cadet-gray solid 1.5px;
+                transition: 100ms ease-in-out;
+
+                &:hover{
+                    color: vars.$ghost-white;
+                    text-decoration: underline;
+                }
+
+                &:last-of-type{
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 575px){
+        label{
+            font-size: 1.15rem;
+        }
+
+        textarea, input, .cust_select>.cst_sel_display{
+            font-size: 1.1rem;
+            padding: 12.5px;
+        }
+
+        .cust_select{
+
+            .cst_sel_display{
+                column-gap: 10px;
+                padding: 12.5px 7.5px;
+
+                .cust_sel_val{
+                    padding: 3px 7.5px;
+                    column-gap: 4.5px;
+
+                    svg{
+                        font-size: 1.05rem;
+                    }
+                }
+            }
+
+            .cst_sel_drp{
+                span{
+                    font-size: 1rem;
+                }
+            }
+        }
+
+    }
+
+    @media (max-width: 380px){
+        label{
+            font-size: 1.05rem;
+        }
+
+        textarea, input, .cust_select>.cst_sel_display{
+            padding: 10px;
+            font-size: 1.05rem;
+        }
+
+        .cust_select{
+            column-gap: 7.5px;
+
+            .cust_sel_val{
+                padding: 3px 5px;
+                font-size: 0.925rem;
+                column-gap: 3px;
+
+                svg{
+                    font-size: 0.95rem;
+                }
             }
         }
     }

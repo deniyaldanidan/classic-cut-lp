@@ -18,7 +18,7 @@ export default function Services(){
                         <motion.div key={serv.id} className={styles.opt} variants={myVars} initial="hidden" whileInView="visible" viewport={{once:true, amount:0.25}}>
                             <div className={styles.upper}>
                                 <div className={styles.name}>{serv.name}</div>
-                                <div className={styles.price}>{typeof serv.price === "number" ? `₹ ${serv.price}` : serv.price}</div>
+                                <div className={styles.price}>{typeof serv.price === "number" ? `₹${serv.price}` : serv.price}</div>
                             </div>
                             <div className={styles.lower}>{serv.description}</div>
                         </motion.div>

@@ -9,9 +9,9 @@ export default function Footer() {
             <div className={styles.hrs}>
                 <div className={styles.head}>Working Hours</div>
                 <div className={styles.hrs_contents}>
-                    <div className={styles.hr}><span>Mon-Fri: </span> <span>7.00 AM - 10.00 PM</span></div>
-                    <div className={styles.hr}><span>Saturday: </span> <span>9.00 AM - 8.00 PM</span></div>
-                    <div className={styles.hr}><span>Sunday: </span> <span>Closed</span></div>
+                    <span className={styles.hr_label}>Mon-Fri: </span> <span>7.00 AM - 10.00 PM</span>
+                    <span className={styles.hr_label}>Saturday: </span> <span>9.00 AM - 8.00 PM</span>
+                    <span className={styles.hr_label}>Sunday: </span> <span>Closed</span>
                 </div>
             </div>
             <div className={styles.addr}>

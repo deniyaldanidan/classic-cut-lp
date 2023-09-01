@@ -1,6 +1,6 @@
 import heroLG from '../assets/hero-lg.jpg';
-// import heroMD from '../assets/hero-md.jpg';
-// import heroSM from '../assets/hero-sm.jpg';
+import heroTAB from '../assets/hero-tab.jpg';
+import heroXS from '../assets/hero-xs.jpg';
 import styles from '../styles/hero.module.scss';
 import { motion, Variants } from 'framer-motion';
 
@@ -40,7 +40,10 @@ export default function Hero() {
 
     return (
         <div className={styles.hero}>
-            <img src={heroLG} alt="The Classic Cut" />
+            <img src={heroLG} alt="The Classic Cut Hero" 
+            srcSet={`${heroXS} 440w, ${heroTAB} 890w, ${heroLG} 1920w`}
+            sizes="(max-width: 440px) 440px, (max-width: 640px) 640px, (max-width: 890px) 890px, (max-width: 1280px) 1280px, 100vw"  
+            />
             <motion.div className={styles.content} animate="visible" initial="hidden" variants={contentVariants}>
                 <motion.div className={styles.title} variants = {titleVariants}>
                     <motion.span variants={titleElVars}>Elevate Style,</motion.span>

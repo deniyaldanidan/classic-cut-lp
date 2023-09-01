@@ -10,7 +10,7 @@
     grid-template-columns: repeat(4, auto);
     grid-template-rows: auto;
     justify-content: space-evenly;
-    column-gap: 40px;
+    gap: 50px 40px;
 
     &::before{
         display: block;
@@ -44,26 +44,16 @@
         }
 
         .hrs_contents{
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            row-gap: 10px;
-
-            .hr{
-                display: flex;
-                align-items: center;
-                column-gap: 10px;
-                
-                span{
-                    font-size: 1.1rem;
-                    font-weight: 500;
-                    color: vars.$ghost-white;
-
-                    &:first-of-type{
-                        width: 10ch;
-                        color: vars.$french-gray;
-                    }
-                }
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            grid-template-rows: auto;
+            gap: 10px 12.5px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: vars.$ghost-white;
+            
+            &.hr_label{
+                color: vars.$french-gray;
             }
         }
 
@@ -93,4 +83,110 @@
         }
     }
 
+    @media (max-width: 1100px){
+        padding: 40px 30px 0;
+    }
+
+    @media (max-width: 980px){
+        grid-template-columns: repeat(2, auto);
+    }
+
+    @media (max-width: 800px){
+        gap: 50px 25px;
+
+        .hrs, .addr, .socials{
+            row-gap: 15px;
+
+            .head{
+                font-size: 1.15rem;
+            }
+
+            .hrs_contents, .addr_content{
+                font-size: 1.05rem;
+            }
+
+            .socials_content{
+                font-size: 1.1rem;
+            }
+        }
+    }
+
+    @media (max-width: 650px){
+        .hrs, .addr, .socials{
+            .head{
+                font-size: 1.1rem;
+            }
+
+            .hrs_contents, .addr_content{
+                font-size: 1rem;
+            }
+
+            .socials_content{
+                font-size: 1.05rem;
+            }
+        }
+    }
+
+    @media (max-width: 575px){
+        padding: 40px 20px 0;
+        column-gap: 15px;
+        justify-content: space-between;
+
+        .hrs, .addr, .socials{
+            .head{
+                font-size: 1.05rem;
+            }
+
+            .hrs_contents{
+                font-size: 0.925rem;
+                column-gap: 7.5px;
+            } 
+            .addr_content{
+                font-size: 0.95rem;
+            }
+        }
+    }
+
+    @media (max-width: 490px){
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "logo socials"
+            "hrs hrs"
+            "addr addr"
+        ;
+        justify-content: space-evenly;
+        align-items: center;
+
+        .hrs{
+            grid-area: hrs;
+            justify-self: center;
+            align-items: center;
+        }
+
+        .addr{
+            grid-area: addr;
+            justify-self: center;
+            align-items: center;
+        }
+
+        img{
+            grid-area: logo;
+            justify-self: center;
+        }
+
+        .socials{
+            grid-area: socials;
+            row-gap: 10px;
+            justify-self: center;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    @media (max-width: 380px){
+        padding: 40px 15px 0;
+        display: flex;
+        flex-direction: column;
+    }
 }

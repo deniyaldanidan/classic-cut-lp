@@ -3,8 +3,6 @@
 .hero{
     position: relative;
     width: 100%;
-    min-height: 100vh;
-    height: fit-content;
     
     img{
         position: absolute;
@@ -15,6 +13,7 @@
         object-fit: cover;
         z-index: -1;
         filter: brightness(40%);
+        background-color: vars.$dark-gunmetal;
     }
 
     .content{
@@ -23,21 +22,23 @@
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        padding: 15% 120px;
+        min-height: fit-content;
+        height: 100vh;
+        max-height: 850px;
+        padding: 100px 75px;
 
         .title{
+            width: 100%;
             font-size: 3rem;
             font-weight: 600;
             text-transform: capitalize;
-            text-align: center;
-
             color: vars.$ghost-white;
 
             display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            flex-direction: column;
-            row-gap: 5px;
+            flex-wrap: wrap;
+            align-items: center;
+            column-gap: 0.25ch;
+            row-gap: 7.5px;
         }
 
         .desc{
@@ -45,7 +46,8 @@
             font-weight: 500;
             line-height: 1.4em;
             color: vars.$platinum;
-            width: 50%;
+            width: 95%;
+            max-width: 700px;
             margin-top: 20px;
         }
 
@@ -67,6 +69,92 @@
             &:hover{
                 background-color: vars.$hover-pink;
                 color: vars.$ghost-white;
+            }
+        }
+    
+        @media (max-width: 1100px){
+            padding: 100px 50px;
+        }
+        
+        @media (max-width: 890px){
+            padding: 95px 30px;
+
+            .title{
+                font-size: 2.5rem;
+            }
+
+            .desc{
+                font-size: 1.2rem;
+                width: 100%;
+                max-width: 525px;
+            }
+
+            .cta_btn{
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 670px){
+            .title{
+                font-size: 2.125rem;
+            }
+        }
+
+        @media (max-width: 575px){
+            padding: 100px 20px;
+        }
+
+        @media (max-width: 553px){
+
+            .desc{
+                max-width: 400px;
+                font-size: 1.15rem;
+            }
+
+            .cta_btn{
+                font-size: 1.15rem;
+                padding: 10px 30px;
+            }
+        }
+
+        @media (max-width: 380px){
+            padding: 100px 15px;
+
+            .title{
+                font-size: 1.75rem;
+                row-gap: 7.5px;
+            }
+
+            .desc{
+                font-size: 1.125rem;
+                margin-top: 15px;
+            }
+
+            .cta_btn{
+                margin-top: 30px;
+            }
+        }
+
+        @media (max-width: 320px){
+            padding: 100px 10px;
+
+            .title{
+                display: block;
+                font-size: 1.65rem;
+
+                span:last-of-type{
+                    margin-left: 7.5px;
+                }
+            }
+
+            .desc{
+                max-width: 275px;
+                font-size: 1rem;
+            }
+
+            .cta_btn{
+                font-size: 1rem;
+                padding: 7.5px 25px;
             }
         }
     }

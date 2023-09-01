@@ -1,0 +1,39 @@
+@use './vars';
+
+.copyright_section{
+    position: relative;
+    padding: 0 50px 20px;
+    font-size: 1.05rem;
+    line-height: 1.35em;
+    text-align: center;
+    color: vars.$platinum;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    column-gap: 6px;
+    row-gap: 12.5px;
+    a{
+        font-weight: 600;
+        transition: 100ms ease-in-out;
+
+        &:hover{
+            color: vars.$hover-pink;
+        }
+    }
+
+    @media (max-width: 650px){
+        font-size: 1rem;
+    }
+
+    @media (max-width: 380px){
+        padding: 0 15px 20px;
+
+        font-size: 0.95rem;
+    }
+
+    @media (max-width: 320px){
+        padding: 0 10px 15px;
+        font-size: 0.9rem;
+    }
+}
