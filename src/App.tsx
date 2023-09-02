@@ -13,9 +13,9 @@ function App() {
     <>
       <Header />
       <Hero />
-      <About />
       <Services />
       <WhyUs />
+      <About />
       <BForm />
       <Galla />
       <Footer />

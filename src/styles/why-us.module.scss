@@ -2,6 +2,7 @@
 
 .whyus {
     padding: 80px 50px 90px;
+    background-color: vars.$dark-gunmetal;
 
     .title {
         font-size: 2rem;
@@ -140,6 +141,7 @@
             .main_img{
                 width: 100%;
                 max-width: 375px;
+                aspect-ratio: 1 / 1;
             }
 
             .contents {
@@ -170,6 +172,10 @@
 
         .main{
             row-gap: 40px;
+
+            .main_img{
+                aspect-ratio: 1.15;
+            }
 
             .contents{
                 .descr{

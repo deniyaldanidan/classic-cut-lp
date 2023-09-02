@@ -1,10 +1,10 @@
 @use './vars';
 
-.hero{
+.hero {
     position: relative;
     width: 100%;
-    
-    img{
+
+    img {
         position: absolute;
         top: 0;
         left: 0;
@@ -16,18 +16,18 @@
         background-color: vars.$dark-gunmetal;
     }
 
-    .content{
+    .content {
         margin: 0 auto;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
         min-height: fit-content;
-        height: 100vh;
-        max-height: 850px;
-        padding: 100px 75px;
+        height: 75vh;
+        max-height: 700px;
+        padding: 100px 100px;
 
-        .title{
+        .title {
             width: 100%;
             font-size: 3rem;
             font-weight: 600;
@@ -41,7 +41,7 @@
             row-gap: 7.5px;
         }
 
-        .desc{
+        .desc {
             font-size: 1.25rem;
             font-weight: 500;
             line-height: 1.4em;
@@ -51,108 +51,108 @@
             margin-top: 20px;
         }
 
-        .cta_btn{
+        .cta_btn {
             margin-top: 35px;
             font-size: 1.25rem;
             font-weight: 600;
 
             background-color: vars.$platinum;
             color: vars.$mild-gunmetal;
-            
+
             border-radius: 0 12px 0 12px;
             padding: 12.5px 40px;
-            
+
             cursor: pointer;
-            
+
             transition: 250ms ease-in-out;
 
-            &:hover{
+            &:hover {
                 background-color: vars.$hover-pink;
                 color: vars.$ghost-white;
             }
         }
-    
-        @media (max-width: 1100px){
+
+        @media (max-width: 1100px) {
             padding: 100px 50px;
         }
-        
-        @media (max-width: 890px){
+
+        @media (max-width: 890px) {
             padding: 95px 30px;
 
-            .title{
+            .title {
                 font-size: 2.5rem;
             }
 
-            .desc{
+            .desc {
                 font-size: 1.2rem;
                 width: 100%;
                 max-width: 525px;
             }
 
-            .cta_btn{
+            .cta_btn {
                 font-size: 1.2rem;
             }
         }
 
-        @media (max-width: 670px){
-            .title{
+        @media (max-width: 670px) {
+            .title {
                 font-size: 2.125rem;
             }
         }
 
-        @media (max-width: 575px){
+        @media (max-width: 575px) {
             padding: 100px 20px;
         }
 
-        @media (max-width: 553px){
+        @media (max-width: 553px) {
 
-            .desc{
+            .desc {
                 max-width: 400px;
-                font-size: 1.15rem;
+                font-size: 1.14rem;
             }
 
-            .cta_btn{
+            .cta_btn {
                 font-size: 1.15rem;
                 padding: 10px 30px;
             }
         }
 
-        @media (max-width: 380px){
+        @media (max-width: 380px) {
             padding: 100px 15px;
 
-            .title{
+            .title {
                 font-size: 1.75rem;
                 row-gap: 7.5px;
             }
 
-            .desc{
-                font-size: 1.125rem;
+            .desc {
+                font-size: 1.1rem;
                 margin-top: 15px;
             }
 
-            .cta_btn{
+            .cta_btn {
                 margin-top: 30px;
             }
         }
 
-        @media (max-width: 320px){
+        @media (max-width: 320px) {
             padding: 100px 10px;
 
-            .title{
+            .title {
                 display: block;
                 font-size: 1.65rem;
 
-                span:last-of-type{
+                span:last-of-type {
                     margin-left: 7.5px;
                 }
             }
 
-            .desc{
+            .desc {
                 max-width: 275px;
                 font-size: 1rem;
             }
 
-            .cta_btn{
+            .cta_btn {
                 font-size: 1rem;
                 padding: 7.5px 25px;
             }

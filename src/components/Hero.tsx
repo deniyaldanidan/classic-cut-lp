@@ -42,7 +42,8 @@ export default function Hero() {
         <div className={styles.hero}>
             <img src={heroLG} alt="The Classic Cut Hero" 
             srcSet={`${heroXS} 440w, ${heroTAB} 890w, ${heroLG} 1920w`}
-            sizes="(max-width: 440px) 440px, (max-width: 640px) 640px, (max-width: 890px) 890px, (max-width: 1280px) 1280px, 100vw"  
+            sizes="(max-width: 440px) 440px, (max-width: 640px) 640px, (max-width: 890px) 890px, (max-width: 1280px) 1280px, 100vw"
+            style={{objectFit: "cover", width: "100%", height: "100%"}}
             />
             <motion.div className={styles.content} animate="visible" initial="hidden" variants={contentVariants}>
                 <motion.div className={styles.title} variants = {titleVariants}>
@@ -50,7 +51,7 @@ export default function Hero() {
                     <motion.span variants={titleElVars}>Embrace Elegance</motion.span>
                 </motion.div>
                 <motion.div className={styles.desc} variants={descVaraint}>
-                    Timeless elegance and impeccable grooming at The Classic Cut, where style soars to new heights.
+                    Timeless elegance and impeccable grooming at The Classic Cut, redefining men's style for unwavering confidence.
                 </motion.div>
                 <motion.a variants={btnVariant} href="#booking-section" className={styles.cta_btn}>Book an appointment</motion.a>
             </motion.div>

@@ -42,9 +42,9 @@ export default function Header() {
                                 {
                                     mblActive ? (
                                         <motion.div className={styles.mbl_hdr_drp} style={{ x: "-50%" }} onClick={() => setMblActive(false)} initial={{ y: "-15px", opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: "-15px", opacity: 0 }} >
-                                            <a href="#about-section" className={styles.mbl_hdr_opt} >About us</a>
                                             <a href="#services-section" className={styles.mbl_hdr_opt} >Services</a>
                                             <a href="#whyus-section" className={styles.mbl_hdr_opt} >Why Us</a>
+                                            <a href="#about-section" className={styles.mbl_hdr_opt} >About us</a>
                                             <a href="#gallery-section" className={styles.mbl_hdr_opt} >Gallery</a>
                                         </motion.div>
                                     ) : ""
@@ -53,9 +53,9 @@ export default function Header() {
                         </div>
                     ) : (
                         <>
-                            <motion.a className={styles.menu} href='#about-section' variants={menuChildVars} >About us</motion.a>
                             <motion.a className={styles.menu} href="#services-section" variants={menuChildVars} >Services</motion.a>
                             <motion.a className={styles.menu} href="#whyus-section" variants={menuChildVars} >Why US</motion.a>
+                            <motion.a className={styles.menu} href='#about-section' variants={menuChildVars} >About us</motion.a>
                             <motion.a className={styles.menu} href="#gallery-section" variants={menuChildVars} >Gallery</motion.a>
                         </>
                     )
